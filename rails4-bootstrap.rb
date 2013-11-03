@@ -127,6 +127,8 @@ inject_into_file 'config/initializers/devise.rb', after: /# config.omniauth .*?\
   eos
 end
 
+remove_file 'app/models/user.rb'
+
 ### Download misc files
 source_url = 'https://raw.github.com/garethbradley/rails4-bootstrap-devise-cancan-omniauth/master'
 get "#{source_url}/app/assets/javascripts/users.js.coffee",                   'app/assets/javascripts/users.js.coffee'
