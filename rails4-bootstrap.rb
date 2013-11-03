@@ -79,6 +79,8 @@ generate 'devise:install'
 generate :controller, "home index"
 generate :devise, 'User image:string first_name:string last_name:string roles_mask:integer'
 
+gsub_file 'config/routes.rb', 'devise_for :users', ''
+
 ### Routes
 route 'resources :users'
 route <<-eos
