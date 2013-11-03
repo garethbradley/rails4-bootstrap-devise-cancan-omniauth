@@ -78,7 +78,7 @@ generate 'simple_form:install --bootstrap'
 generate 'devise:install'
 generate :controller, "home index"
 generate :devise, 'User image:string first_name:string last_name:string roles_mask:integer'
-generate :model, "uid:string provider:string token:string secret:string expires_at:datetime email:string image:string nickname:string first_name:string last_name:string"
+generate :model, "Identity uid:string provider:string token:string secret:string expires_at:datetime email:string image:string nickname:string first_name:string last_name:string"
 gsub_file 'config/routes.rb', 'devise_for :users', ''
 
 ### Routes
