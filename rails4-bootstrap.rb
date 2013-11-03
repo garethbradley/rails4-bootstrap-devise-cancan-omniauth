@@ -1,5 +1,5 @@
 ### Initial setup
-remove_file 'config/database.yml'
+#remove_file 'config/database.yml'
 remove_file 'app/assets/stylesheets/application.css'
 remove_file 'app/controllers/application_controller.rb'
 remove_file 'app/views/layouts/application.html.erb'
@@ -8,18 +8,18 @@ environment 'config.action_mailer.default_url_options = {host: "localhost:3000"}
 
 
 ### Disable active record
-gsub_file 'config/application.rb', "require 'rails/all'" do
-<<-eos
-#require 'rails/all'
-require 'action_controller/railtie'
-require 'action_mailer/railtie'
-#require 'rails/test_unit/railtie'
-require 'sprockets/railtie'
-eos
-end
+#gsub_file 'config/application.rb', "require 'rails/all'" do
+#<<-eos
+# #require 'rails/all'
+# require 'action_controller/railtie'
+# require 'action_mailer/railtie'
+# #require 'rails/test_unit/railtie'
+# require 'sprockets/railtie'
+# eos
+# end
 
-gsub_file 'config/environments/development.rb', 'config.active_record', '#config.active_record'
-gsub_file 'config/environments/production.rb', 'config.active_record', '#config.active_record'
+#gsub_file 'config/environments/development.rb', 'config.active_record', '#config.active_record'
+#gsub_file 'config/environments/production.rb', 'config.active_record', '#config.active_record'
 
 ### Gems
 remove_file 'Gemfile'
@@ -27,7 +27,8 @@ create_file 'Gemfile'
 add_source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem "mongoid", github: "mongoid/mongoid"
+#gem "mongoid", github: "mongoid/mongoid"
+gem 'sqlite3'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -72,7 +73,7 @@ gem "hashugar", github: "alex-klepa/hashugar"
 run 'bundle install'
 
 ### Generators
-generate 'mongoid:config'
+#generate 'mongoid:config'
 generate 'simple_form:install --bootstrap'
 generate 'devise:install'
 generate :controller, "home index"
@@ -126,7 +127,7 @@ inject_into_file 'config/initializers/devise.rb', after: /# config.omniauth .*?\
 end
 
 ### Download misc files
-source_url = 'https://raw.github.com/alex-klepa/rails4-bootstrap-devise-cancan-omniauth/master'
+source_url = 'https://raw.github.com/garethbradley/rails4-bootstrap-devise-cancan-omniauth/master'
 get "#{source_url}/app/assets/javascripts/users.js.coffee",                   'app/assets/javascripts/users.js.coffee'
 get "#{source_url}/app/assets/stylesheets/application.css.scss",              'app/assets/stylesheets/application.css.scss'
 get "#{source_url}/app/assets/stylesheets/bootstrap_and_overrides.css.scss",  'app/assets/stylesheets/bootstrap_and_overrides.css.scss'
