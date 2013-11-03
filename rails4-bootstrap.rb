@@ -53,7 +53,7 @@ gem_group :development, :test do
 end
 
 gem_group :test do
-  gem "mongoid-rspec"
+  gem "rspec"
   gem "ffaker"
   gem "simplecov", require: false
   gem "database_cleaner"
@@ -68,7 +68,6 @@ gem "cancan"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-twitter"
-gem "hashugar", github: "alex-klepa/hashugar"
 
 run 'bundle install'
 
