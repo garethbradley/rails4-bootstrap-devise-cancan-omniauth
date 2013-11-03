@@ -68,6 +68,7 @@ gem "cancan"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-twitter"
+gem "hashugar", github: "alex-klepa/hashugar"
 
 run 'bundle install'
 
