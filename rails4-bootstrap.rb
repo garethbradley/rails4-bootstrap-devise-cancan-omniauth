@@ -63,7 +63,7 @@ end
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem "font-awesome-sass-rails"
 gem "simple_form", github: "plataformatec/simple_form"
-gem "devise", "~> 3.0.0"
+gem "devise", "~> 3.1.1"
 gem "cancan"
 gem "omniauth"
 gem "omniauth-facebook"
