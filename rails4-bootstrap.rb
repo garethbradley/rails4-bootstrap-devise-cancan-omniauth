@@ -78,7 +78,7 @@ generate 'simple_form:install --bootstrap'
 generate 'devise:install'
 generate :controller, "home index"
 generate :devise, 'User image:string first_name:string last_name:string roles_mask:integer'
-
+generate :model, "uid:string provider:string token:string secret:string expires_at:datetime email:string image:string nickname:string first_name:string last_name:string"
 gsub_file 'config/routes.rb', 'devise_for :users', ''
 
 ### Routes
@@ -130,6 +130,7 @@ inject_into_file 'config/initializers/devise.rb', after: /# config.omniauth .*?\
 end
 
 remove_file 'app/models/user.rb'
+remove_file 'app/models/identity.rb'
 
 ### Download misc files
 source_url = 'https://raw.github.com/garethbradley/rails4-bootstrap-devise-cancan-omniauth/master'
