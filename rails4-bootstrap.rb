@@ -84,6 +84,18 @@ gsub_file 'config/routes.rb', 'devise_for :users', ''
 migration_devise_user = Dir.glob(File.join("**", "db", "migrate", "*_devise_create_users.rb")).first
 migration_identities = Dir.glob(File.join("**", "db", "migrate", "*_create_identities.rb")).first
 
+gsub_file(migration_devise_user, '# t.string   :confirmation_token',    ' t.string   :confirmation_token')
+gsub_file(migration_devise_user, '# t.datetime :confirmed_at',          ' t.datetime :confirmed_at')
+gsub_file(migration_devise_user, '# t.datetime :confirmation_sent_at',  ' t.datetime :confirmation_sent_at')
+gsub_file(migration_devise_user, '# t.string   :unconfirmed_email',     ' t.string   :unconfirmed_email')
+gsub_file(migration_devise_user, '# t.integer  :failed_attempts',       ' t.integer  :failed_attempts')
+gsub_file(migration_devise_user, '# t.string   :unlock_token',          ' t.string   :unlock_token')
+gsub_file(migration_devise_user, '# t.datetime :locked_at',             ' t.datetime :locked_at')
+gsub_file(migration_devise_user, '# add_index :users, :confirmation_token,   :unique => true', ' add_index :users, :confirmation_token,   :unique => true')
+gsub_file(migration_devise_user, '# add_index :users, :unlock_token,         :unique => true', ' add_index :users, :unlock_token,         :unique => true')
+      
+    
+      
 #puts "Devise Migration File: #{migration_devise_user.to_s}"
 #puts "Identities Migration File: #{migration_identities.to_s}"
 
