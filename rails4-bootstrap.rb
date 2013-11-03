@@ -84,8 +84,8 @@ gsub_file 'config/routes.rb', 'devise_for :users', ''
 migration_devise_user = Dir.glob(File.join("**", "db", "migrate", "*_devise_create_users.rb")).first
 migration_identities = Dir.glob(File.join("**", "db", "migrate", "*_create_identities.rb")).first
 
-puts "Devise Migration File: #{migration_devise_user.to_s}"
-puts "Identities Migration File: #{migration_identities.to_s}"
+#puts "Devise Migration File: #{migration_devise_user.to_s}"
+#puts "Identities Migration File: #{migration_identities.to_s}"
 
 ### Routes
 route 'resources :users'
