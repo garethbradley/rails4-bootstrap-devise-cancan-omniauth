@@ -140,7 +140,7 @@ get "#{source_url}/app/controllers/users_controller.rb",                      'a
 get "#{source_url}/app/helpers/users_helper.rb",                              'app/helpers/users_helper.rb'
 get "#{source_url}/app/models/ability.rb",                                    'app/models/ability.rb'
 get "#{source_url}/app/models/identity.rb",                                   'app/models/identity.rb'
-#get "#{source_url}/app/models/user.rb",                                       'app/models/user.rb'
+get "#{source_url}/app/models/user.rb",                                       'app/models/user.rb'
 get "#{source_url}/app/models/user/auth_definitions.rb",                      'app/models/user/auth_definitions.rb'
 get "#{source_url}/app/models/user/roles.rb",                                 'app/models/user/roles.rb'
 get "#{source_url}/app/views/devise/unlocks/new.html.erb",                    'app/views/devise/unlocks/new.html.erb'
