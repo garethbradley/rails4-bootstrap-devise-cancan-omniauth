@@ -81,8 +81,8 @@ generate :devise, 'User image:string first_name:string last_name:string roles_ma
 generate :model, "Identity uid:string provider:string token:string secret:string expires_at:datetime email:string image:string nickname:string first_name:string last_name:string"
 gsub_file 'config/routes.rb', 'devise_for :users', ''
 
-migration_devise_user = Dir.glob("db/migrate/[0-9]{14}_devise_create_users.rb").first
-migration_identities = Dir.glob("db/migrate/[0-9]{14}_create_identities.rb").first
+migration_devise_user = Dir.glob(File.join("**", "db", "migrate", "[0-9]{14}_devise_create_users.rb")).first
+migration_identities = Dir.glob(File.join("**", "db", "migrate", "[0-9]{14}_create_identities.rb")).first
 
 raise migration_devise_user.inspect.to_s
 puts migration_identities
