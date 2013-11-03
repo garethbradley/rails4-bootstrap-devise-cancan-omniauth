@@ -77,7 +77,7 @@ run 'bundle install'
 generate 'simple_form:install --bootstrap'
 generate 'devise:install'
 generate :controller, "home index"
-generate :devise, 'User'
+generate :devise, 'User image:string first_name:string last_name:string roles_mask:integer'
 
 ### Routes
 route 'resources :users'
