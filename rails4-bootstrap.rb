@@ -84,7 +84,7 @@ gsub_file 'config/routes.rb', 'devise_for :users', ''
 migration_devise_user = Dir.glob("db/migrate/[0-9]{14}_devise_create_users.rb").first
 migration_identities = Dir.glob("db/migrate/[0-9]{14}_create_identities.rb").first
 
-raise migration_devise_user
+raise migration_devise_user.inspect.to_s
 puts migration_identities
 
 ### Routes
