@@ -93,8 +93,12 @@ gsub_file(migration_devise_user, '# t.string   :unlock_token',          ' t.stri
 gsub_file(migration_devise_user, '# t.datetime :locked_at',             ' t.datetime :locked_at')
 gsub_file(migration_devise_user, '# add_index :users, :confirmation_token,   :unique => true', ' add_index :users, :confirmation_token,   :unique => true')
 gsub_file(migration_devise_user, '# add_index :users, :unlock_token,         :unique => true', ' add_index :users, :unlock_token,         :unique => true')
-      
-    
+
+inject_into_file migration_identities, after: 't.timestamps\n    end\n' do
+  <<-eos
+    add_index :identities, [:uid, :provider], unique: true
+  eos
+end
       
 #puts "Devise Migration File: #{migration_devise_user.to_s}"
 #puts "Identities Migration File: #{migration_identities.to_s}"
