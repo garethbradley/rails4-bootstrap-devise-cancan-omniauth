@@ -26,7 +26,7 @@ remove_file 'Gemfile'
 create_file 'Gemfile'
 add_source 'https://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '>= 4.0.0'
 #gem "mongoid", github: "mongoid/mongoid"
 gem 'sqlite3'
 
@@ -63,7 +63,7 @@ end
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem "font-awesome-sass-rails"
 gem "simple_form", github: "plataformatec/simple_form"
-gem "devise", "~> 3.1.1"
+gem "devise"
 gem "cancan"
 gem "omniauth"
 gem "omniauth-facebook"
